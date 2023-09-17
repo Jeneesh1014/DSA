@@ -9,10 +9,16 @@ package com.dsa.Array.Easy.Question12;
 //        Input Format: N = 5, k = 10, array[] = {2,3,5,1,9}
 //        Result: 3
 
+
+
 public class Answer12 {
     public static void main(String[] args) {
         int N = 3;
         int k = 5;
         int[] arr = {2,3,5};
+        for(int i=0;i<k;i++){
+
+        }
     }
 }
+
