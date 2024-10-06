@@ -6,6 +6,6 @@ package com.dsa.DP.oneDimensionDP;
 
 public class FrogJumpWithKDistance {
     public static void main(String[] args) {
-
+        System.out.println("hi");
     }
 }
