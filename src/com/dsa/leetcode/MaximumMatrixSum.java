@@ -3,7 +3,7 @@ package com.dsa.leetcode;
 // https://leetcode.com/problems/maximum-matrix-sum/description/
 public class MaximumMatrixSum {
     public static void main(String[] args) {
-        // Example usage:
+        // Example:
         // Input matrix:
         // [
         //   [1, -1, 3],
