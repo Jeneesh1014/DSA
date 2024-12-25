@@ -11,7 +11,7 @@ public class MaximumMatrixSum {
         //   [7, -8, 9]
         // ]
         // Expected output: 45
-        // Explanation:
+        // Explanations:
         // Convert matrix elements such that the sum is maximized.
         // The sum is calculated as: |1| + |1| + |3| + |2| + |4| + |6| + |7| + |8| + |9| = 45.
 
