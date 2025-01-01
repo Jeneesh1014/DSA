@@ -1,0 +1,29 @@
+name: Auto Merge to Main
+
+on:
+  push:
+    branches:
+      - 'dev-jeneesh'
+  
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config user.name "jeneesh1014"
+          git config user.email "jeneeshsurani@gmail.com"
+
+      - name: Fetch the latest main branch
+        run: git fetch origin main
+
+      - name: Merge dev-jeneesh into main
+        run: |
+          git checkout main
+          git merge origin/dev-jeneesh --no-edit
+          git push origin main
