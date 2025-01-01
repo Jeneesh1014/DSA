@@ -1,0 +1,35 @@
+name: Force Merge to Main
+
+on:
+  push:
+    branches:
+      - 'dev-jeneesh'
+  
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config user.name "jeneesh1014"
+          git config user.email "jeneeshsurani@gmail.com"
+
+      - name: Fetch the latest main branch
+        run: git fetch origin main
+
+      - name: Forcefully merge dev-jeneesh into main
+        run: |
+          git checkout main
+          git merge origin/dev-jeneesh --allow-unrelated-histories --strategy=recursive --strategy-option=theirs --no-edit  # Forcefully accept dev-jeneesh changes
+          git push origin main
+
+      - name: Set up authentication with GitHub Token
+        run: git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Jeneesh1014/DSA.git
+
+      - name: Push changes to main
+        run: git push origin main
