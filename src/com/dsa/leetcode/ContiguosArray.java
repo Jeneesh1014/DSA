@@ -25,7 +25,6 @@ public class ContiguosArray {
 
 
 // 2 Solution
-
 //class Solution {
 //    public int findMaxLength(int[] nums) {
 //        if (nums == null || nums.length == 0) { // Base Case
