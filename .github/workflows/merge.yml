@@ -27,4 +27,4 @@ jobs:
           git merge origin/dev-jeneesh --allow-unrelated-histories --strategy=recursive --strategy-option=theirs --no-edit  # Forcefully accept dev-jeneesh changes
 
       - name: Force push to main
-        run: git push origin main --force
+        run: git push origin main
