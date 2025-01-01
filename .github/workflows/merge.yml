@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'dev-jeneesh'
-  
 
 jobs:
   merge:
@@ -26,10 +25,6 @@ jobs:
         run: |
           git checkout main
           git merge origin/dev-jeneesh --allow-unrelated-histories --strategy=recursive --strategy-option=theirs --no-edit  # Forcefully accept dev-jeneesh changes
-          git push origin main
 
-      - name: Set up authentication with GitHub Token
-        run: git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Jeneesh1014/DSA.git
-
-      - name: Push changes to main
-        run: git push origin main
+      - name: Force push to main
+        run: git push origin main --force
