@@ -25,5 +25,8 @@ jobs:
       - name: Merge dev-jeneesh into main
         run: |
           git checkout main
-          git merge origin/dev-jeneesh --allow-unrelated-histories --no-edit
+          git merge origin/dev-jeneesh --allow-unrelated-histories --no-edit || exit 1  # Fail if there's a conflict
+          git checkout --theirs src/com/dsa/leetcode/ContiguosArray.java  # Automatically accept the changes from dev-jeneesh
+          git add src/com/dsa/leetcode/ContiguosArray.java  # Stage the file after resolving conflict
+          git commit -m "Auto-merged dev-jeneesh into main"
           git push origin main
